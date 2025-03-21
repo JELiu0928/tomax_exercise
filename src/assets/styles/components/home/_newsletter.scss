@@ -1,0 +1,50 @@
+.newsletter {
+	background-color: #fff;
+	// padding: 20rem;
+	padding-block: 4.8rem;
+	// padding-bottom: 4.8rem;
+	&__wrap {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+       
+		&::before {
+			background: url("../img/quality/emailAreaLeft.png") no-repeat center;
+			left: 0;
+            // opacity: 0.5;
+            transform: translateX(-15%);
+		}
+        &.fade_in::before{
+            opacity: 1;
+            transform: translateX(0);
+        }
+		&::after {
+			background: url("../img/quality/emailAreaRight.png") no-repeat center;
+			right: 0;
+            transform: translateX(15%);
+		}
+        &.fade_in::after{
+            opacity: 1;
+            transform: translateX(0);
+        }
+		@media (max-width: 1180px) {
+			&::after,
+			&::before {
+				display: none;
+			}
+		}
+		&::before,
+		&::after {
+			content: "";
+			width: 23.125rem;
+			height: 10rem;
+			position: absolute;
+			top: 6rem;
+			background-size: cover;
+            transition: transform 2s 800ms, opacity 2s 800ms;
+            opacity: 0;
+
+		}
+	}
+}

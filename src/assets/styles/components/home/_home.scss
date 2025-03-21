@@ -1,0 +1,15 @@
+// 引入依賴
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/mixins' as *;
+@use '../../base/animations' as *;
+@use '../../layouts/header' ;
+@use '../../layouts/footer' ;
+@use 'banner';
+@use 'search';
+@use 'brand';
+@use 'recommend';
+@use 'quality';
+@use 'about';
+@use 'newsletter';
+@use '../text-circle';
+
