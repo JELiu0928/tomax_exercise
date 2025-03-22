@@ -249,7 +249,7 @@
 						<div class="grid-slide">
 							<div class="grid-slide-mask">
 								<img src="<%= require('./assets/img/food/三杯醬.jpg') %>" alt="三杯醬" />
-								<p class="mask-desc">以傳統塔香三杯炒醬為基底，加入獨家十三香，讓傳統三杯料理口感層次更加豐富，在老口味與創新中找到絕佳平衡點，讓飲食增添趣...</p>
+								<p class="mask-desc">以傳統塔香三杯炒醬為基底，加入獨家十三香，讓傳統三杯料理口感層次更加豐富，在老口味與創新中找到絕佳平衡點，讓飲食增添趣味...</p>
 							</div>
 							<p>三杯醬</p>
 						</div>
@@ -263,14 +263,14 @@
 						<div class="grid-slide">
 							<div class="grid-slide-mask">
 								<img src="<%= require('./assets/img/food/麻婆醬.jpg') %>" alt="麻婆醬" />
-								<p class="mask-desc">以郫縣豆瓣及台式豆瓣作為主體製成，濃厚有層次的豆香醬味為底，輔以恰到好處的辣鹹鮮，味蕾最後留下青花椒的清爽麻香，讓人一...</p>
+								<p class="mask-desc">以郫縣豆瓣及台式豆瓣作為主體製成，濃厚有層次的豆香醬味為底，輔以恰到好處的辣鹹鮮，味蕾最後留下青花椒的清爽麻香，讓人一吃...</p>
 							</div>
 							<p>麻婆醬</p>
 						</div>
 						<div class="grid-slide">
 							<div class="grid-slide-mask">
 								<img src="<%= require('./assets/img/food/糖醋醬.jpg') %>" alt="糖醋醬" />
-								<p class="mask-desc">添加羅望子醬與鳳梨汁，讓酸甜層次入口後變得層次有趣，讓傳統糖醋料理有了新的味覺高度。適用於排骨、魚片、雞丁等食材，賦予...</p>
+								<p class="mask-desc">添加羅望子醬與鳳梨汁，讓酸甜層次入口後變得層次有趣，讓傳統糖醋料理有了新的味覺高度。適用於排骨、魚片、雞丁等食材，賦予食...</p>
 							</div>
 							<p>糖醋醬</p>
 						</div>
@@ -311,11 +311,16 @@
 						<div class="swiper-button-next recommend-btn-next"></div>
 					</div>
 					<div class="recommend__recipe-area">
-						<a href="javascript:;" title="壽喜燒鍋">
-							<div class="icon_play">
-								<img src="<%= require('./assets/img/icon/icon_play.png') %>" alt="壽喜燒鍋" />
-							</div>
-						</a>
+						<div class="icon_play ">
+							<a class="btn_video" href="javascript:;" title="壽喜燒鍋">
+								<!-- <img src="<%= require('./assets/img/icon/icon_play.png') %>" alt="壽喜燒鍋" /> -->
+								<svg class="btn_video-svg" width="116" height="116">
+									<circle class="bg" fill="#fff" cx="58" cy="58" r="58"></circle>
+									<circle class="line1" fill="none" stroke="#b5b6b6" stroke-width="1" cx="53" cy="53" r="53"></circle>
+									<circle class="line2" fill="none" stroke="#009944" stroke-width="1" cx="53" cy="53" r="53"></circle>
+								</svg>
+							</a>
+						</div>
 						<article>
 							<a href="#"><h4>壽喜燒鍋</h4></a>
 							<p>醬醇甘美的小磨坊日式壽喜燒鍋醬，搭配洋蔥一起烹煮而增添洋蔥香甜滋味，蔬菜吸附飽滿醬汁，加上肉片及喜歡的配料，一包...</p>
@@ -411,7 +416,7 @@
 								<a href="#" class="btn__capsule video_btn">watch video</a>
 							</div>
 						</article>
-						<div class="about__video">
+						<div class="about__video btn_video_container">
 							<a class="btn_video" href="https://www.youtube.com/watch?v=7lR7wM1gld0" target="_blank">
 								<svg class="btn_video-svg" width="116" height="116">
 									<circle class="bg" fill="#fff" cx="58" cy="58" r="58"></circle>

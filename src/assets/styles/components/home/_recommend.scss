@@ -1,5 +1,7 @@
 @forward "../button";
 .recommend {
+	--max-lines: 4;
+	--line-height: 1.8;
 	background-color: #f9f8f8;
 	// margin-top: 3rem;
 	padding-top: 3rem;
@@ -29,7 +31,7 @@
 				padding-bottom: 20rem;
 			}
 
-			& > a {
+			& > .icon_play > a {
 				opacity: 0.5;
 				transform: translateY(10%);
 				flex: 1.5;
@@ -43,17 +45,17 @@
 				position: relative;
 				z-index: 1;
 				transition: transform 1s, opacity 1.5s;
-				& > .icon_play {
-					// background-color: rgba(255, 255, 255, 0.75);
-					background: rgba(255, 255, 255, 0.75), conic-gradient(red 80%, green 100%);
-					border-radius: 50%;
-					width: 7.25rem;
-					height: 7.25rem;
-					border: inset 1px solid #004505;
-				}
+				// & > .icon_play {
+				// 	// background-color: rgba(255, 255, 255, 0.75);
+				// 	background: rgba(255, 255, 255, 0.75), conic-gradient(red 80%, green 100%);
+				// 	border-radius: 50%;
+				// 	width: 7.25rem;
+				// 	height: 7.25rem;
+				// 	border: inset 1px solid #004505;
+				// }
 			}
 			&.fade_in {
-				& > a,
+				& > .icon_play > a,
 				& > article {
 					opacity: 1;
 					transform: translateY(0%);
@@ -74,7 +76,13 @@
 				transition: transform 2s 100ms, opacity 2s 100ms;
 				opacity: 0;
 				transform: translateY(10%);
-
+                @media (max-width: 768px) {
+					// top: 50%;
+					left: 50%;
+					transform: translate(-50% , 0%) !important;
+                   
+              
+				}
 				& > p {
 					line-height: 1.8;
 					font-size: 15px;
@@ -84,19 +92,15 @@
 
 				& > a:has(h4) {
 					color: #263149;
-                    display: block;
+					display: block;
 					font-size: 1.375rem;
 					letter-spacing: 2.5px;
-                    border-bottom: 1px solid #e5e5e5;
-                    padding-bottom: 1rem;
-                    margin-bottom: 1rem;
+					border-bottom: 1px solid #e5e5e5;
+					padding-bottom: 1rem;
+					margin-bottom: 1rem;
 				}
 
-				@media (max-width: 768px) {
-					top: 23rem;
-					left: 50%;
-					transform: translateX(-50%);
-				}
+				
 			}
 			&::before {
 				content: "";
@@ -162,6 +166,8 @@
 		opacity: 0.5;
 		transition: transform 1s, opacity 1.5s;
 		font-family: "Noto Sans TC";
+		width: 100%;
+
 		&.fade_in {
 			transform: translateY(0%);
 			opacity: 1;
@@ -173,9 +179,13 @@
 		@media (max-width: 960px) {
 			display: none;
 		}
+
 		& .grid-slide {
 			cursor: pointer;
-			&:hover .mask-desc::after {
+			width: 100%;
+			container-type: inline-size;
+			container-name: grid-container;
+			&:hover .grid-slide-mask::after {
 				margin-top: 0%;
 				opacity: 1;
 			}
@@ -197,12 +207,24 @@
 				text-align: center;
 				font-size: 1.125rem;
 				color: #4f5c67;
+				line-height: var(--line-height);
 			}
 		}
 	}
+
 	.grid-slide-mask {
 		position: relative;
 		color: #fff;
+		&::after {
+			content: "";
+			position: absolute;
+			margin-top: 30%;
+			opacity: 0;
+			background-color: rgba(16, 34, 50, 0.95);
+			inset: 0;
+			z-index: 1;
+			transition: margin-top 500ms, opacity 500ms;
+		}
 		& > img {
 			width: 100%;
 			position: relative;
@@ -211,36 +233,41 @@
 		& > .mask-desc {
 			position: absolute;
 			inset: 0;
-			z-index: 1;
-			display: grid;
-			place-content: center;
+			z-index: 2;
+			margin: auto;
 			padding-inline: 35px;
 			padding-bottom: 3rem;
 			opacity: 0;
 			transition: padding-bottom 500ms, opacity 500ms;
-			&::after {
-				content: "";
-				position: absolute;
-				margin-top: 30%;
-				opacity: 0;
-				background-color: rgba(16, 34, 50, 0.95);
-				inset: 0;
-				z-index: -1;
-				transition: margin-top 500ms, opacity 500ms;
-			}
+			// 控制加上...
+			line-height: var(--line-height);
+			max-height: calc(var(--max-lines) * 1em * var(--line-height));
+			text-overflow: ellipsis;
+			align-items: center;
+			display: -webkit-box;
+			overflow: hidden;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: var(--max-lines);
+			line-clamp: var(--max-lines);
 		}
+
+		// 名稱和後面()要有空格不然不會顯示
+		// @container grid-container (max-width: 400px) {
+		// 	& .mask-desc {
+		// 		-webkit-line-clamp: var(--max-lines);
+		// 		line-clamp: var(--max-lines);
+		// 	}
+		// }
 	}
 }
+
 .recommend__swiper {
 	display: none;
-	// width: 1200px;
-	// width: 50%;
 	text-align: center;
 
 	@media (max-width: 960px) {
 		display: block;
 		position: relative;
-		// width: 900px;
 
 		.recommend-btn-prev::after,
 		.recommend-btn-next::after {
@@ -256,15 +283,10 @@
 	}
 
 	.swiper {
-		&-wrapper {
-			// display: grid;
-			// grid-template-columns: 200px ;
-		}
 		&-slide {
 			padding: 0 30px;
-			// & .grid-slide {
 			cursor: pointer;
-			&:hover .mask-desc::after {
+			&:hover .grid-slide-mask::after {
 				margin-top: 0%;
 				opacity: 1;
 			}
