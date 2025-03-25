@@ -3,3 +3,19 @@
     border: none;
     background-color: #fff;
 }
+
+@mixin fade-down($duration: 1.2s) {
+    opacity: 0;
+    transform: translateY(-2rem);
+    transition: opacity $duration, transform $duration;
+  
+    &.fade_in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+@mixin flexLayout($justify-content : center, $align-items : center){
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}

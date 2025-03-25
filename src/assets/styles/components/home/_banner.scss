@@ -1,13 +1,60 @@
+@use "../../abstracts/mixins" as *;
 .banner {
-	// height: 690px;
 	width: 100%;
 	.swiper {
 		position: relative;
+		&-wrapper {
+			@include fade-down($duration: 1.2s);
+		}
 		&-slide {
 			opacity: 1;
+
+			& > .img_text {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+				color: #fff;
+				max-width: 1000px;
+				width: 100%;
+				margin: auto;
+				padding-left: 10%;
+
+				& > em {
+					font-size: 3.125rem;
+				}
+				& > h3 {
+					font-size: 3.4375rem;
+					margin-bottom: 1.375rem;
+					letter-spacing: 0.01em;
+				}
+				& > p {
+					letter-spacing: 0.2em;
+				}
+				@media (max-width: 960px) {
+					& > em {
+						font-size: 2.5rem;
+					}
+					& > h3 {
+						font-size: 2.8rem;
+						margin-bottom: 0.7rem;
+					}
+				}
+                @media (max-width: 768px) {
+                    & > em {
+						font-size: 1.8rem;
+					}
+					& > h3 {
+						font-size: 2.2rem;
+						margin-bottom: 0.5rem;
+					}
+                }
+			}
 		}
 		&-slide > img {
+			display: block;
 			width: 100%;
+			height: 100%;
 			object-fit: contain;
 		}
 		&-custom > .swiper-pagination.swiper-pagination-bullets {

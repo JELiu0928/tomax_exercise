@@ -2,12 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-    // border: red 1px solid;
 }
 body{
     overflow-x: hidden;
-    // perspective: 1000px;
 }
 main{
 	padding-top: 120px;
@@ -26,9 +23,6 @@ text {
     font-size: 1.4rem;
     font-weight: bold;
     fill: #000;
-    // text-transform: uppercase; /* 讓文字全大寫 */
     font-family: sans-serif;
-    // font-family: "Oswald", "微軟正黑體", sans-serif;
     scale: 1 1.5;
-    // letter-spacing: 1px; /* 調整字母間距 */
 }

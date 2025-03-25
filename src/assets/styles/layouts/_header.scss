@@ -1,85 +1,78 @@
+@use "../abstracts/mixins" as *;
 header {
 	position: fixed;
 	height: 120px;
 	width: 100%;
-	// margin: 0 auto;
 	z-index: 29;
 	background-color: #fff;
 	display: flex;
 	align-items: center;
 	transition: height 500ms;
-    & [type="checkbox"],.menu_btn{
-        display: none;
-    }
+	& [type="checkbox"],
+	.menu_btn {
+		display: none;
+	}
 	@media (max-width: 1180px) {
 		flex-direction: column;
 		height: 60px;
-        
-        box-shadow: 0 1.5px 6px #aaa;
-        & [type="checkbox"]{
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 60px;
-            height: 60px;
-            z-index: 30;
-            opacity: 0;
-            cursor: pointer;
-            &:checked+.menu_btn::after{
-                transform: rotate(-135deg) ;
-                translate: 0 -.55rem;
-            }
-            &:checked+.menu_btn::before{
-                transform: rotate(135deg) ;
-                translate: 0 .55rem;
-            }
-            &:checked+.menu_btn > span{
-                opacity: 0;
-            }
-            &:checked ~ .nav-menu {
-                transform: translateY(0px);
-                opacity: 1;
-                pointer-events: auto;
-                padding-top: 0px;
-            }
-        }
-        .menu_btn {
-            width: 60px;
-            height: 60px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            &::after,&::before{
-                content: '';
-                display: block;
-                background-color: rgb(119, 57, 57);
-                width: 35px;
-                height: 1px;
-                transition: 1000ms;
 
-            }
-            & > span{
-                display: block;
-                margin-block: 0.5rem;;
-                width: 35px;
-                height: 1px;
-                background-color: rgb(188, 36, 36);
-            }
-       
-            // &:hover::after{
-            //     transform: rotate(-135deg) ;
-            //     translate: 0 -.55rem;
-            // }
-            // &:hover::before{
-            //     transform: rotate(135deg) ;
-            //     translate: 0 .55rem;
-            // }
-        }
+		box-shadow: 0 1.5px 6px #aaa;
+		& [type="checkbox"] {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 60px;
+			height: 60px;
+			z-index: 30;
+			opacity: 0;
+			cursor: pointer;
+			&:checked + .menu_btn::after {
+				transform: rotate(-135deg);
+				translate: 0 -0.55rem;
+			}
+			&:checked + .menu_btn::before {
+				transform: rotate(135deg);
+				translate: 0 0.55rem;
+			}
+			&:checked + .menu_btn > span {
+				opacity: 0;
+			}
+			&:checked ~ .nav-menu {
+				transform: translateY(0px);
+				opacity: 1;
+				pointer-events: auto;
+				padding-top: 0px;
+			}
+		}
+		.menu_btn {
+			--menu-btn-size: 60px;
+			--menu-btn-line: 30px;
+
+			width: var(--menu-btn-size);
+			height: var(--menu-btn-size);
+			position: absolute;
+			top: 0;
+			left: 0;
+			@include flexLayout;
+			flex-direction: column;
+			&::after,
+			&::before {
+				content: "";
+				display: block;
+				background-color: var(--color-btn-navy);
+				width: var(--menu-btn-line);
+				height: 1px;
+				transition: 1s;
+			}
+			& > span {
+				display: block;
+				margin-block: 0.5rem;
+				width: var(--menu-btn-line);
+				height: 1px;
+				background-color: var(--color-btn-navy);
+			}
+		}
 	}
 }
 @media (min-width: 1180px) {
@@ -87,46 +80,24 @@ header {
 		display: flex;
 		width: 100%;
 		height: 100%;
-		// width: 100vw;
 		align-items: center;
 		justify-content: center;
+
 		&-hamburger {
 			display: none;
 		}
 		@media (max-width: 1180px) {
 			display: none;
-			// 	flex-direction: column;
-			// 	position: absolute;
-			//     top: 60px;
-			// 	left: 0;
-			//     height: max-content;
 		}
 		&-logo {
 			margin: auto;
 			text-align: center;
-			@media (max-width: 1180px) {
-				// height: 100%;
-				// padding: 0.7rem;
-				// // line-height: 38px;
-				// background-color: aqua;
-				// & > img {
-				// 	// display: block;
-				// 	// object-fit: cover;
-				// 	height: 100%;
-				// }
-			}
+			@include fade-down($duration: 1.2s);
 		}
 		&-menu {
 			margin: auto;
 			height: 100%;
-			@media (max-width: 1180px) {
-				// background-color: tomato;
-				// position: relative;
-				// height: 500px;
-				// width: 100%;
-				// top: 0;
-				// left: 0;
-			}
+			@include fade-down($duration: 1.2s);
 		}
 		&-item > a {
 			display: block;
@@ -176,11 +147,14 @@ header {
 			top: 110%;
 			transition: 500ms;
 			pointer-events: none;
+
+			width: 9.375rem;
 			&.current {
 				top: 100%;
 				opacity: 1;
 			}
 			& > li > a {
+				width: 100%;
 				display: inline-block;
 				padding: 1rem 0.8rem;
 				color: var(--color-grey);
@@ -202,12 +176,10 @@ header {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-		
-            
+			overflow-y: auto;
+			max-height: 100vh;
 			& > .map {
-				display: flex;
-				justify-content: center;
-				align-items: center;
+				@include flexLayout;
 				width: 46px;
 				height: 46px;
 				background-color: rgba(255, 255, 255, 0.2);
@@ -229,12 +201,10 @@ header {
 		&-menu {
 			background-color: rgba(0, 153, 68, 0.9);
 			width: 100%;
-            // transform: translateY(30px);
-            padding-top: 80px;
-            transition: padding 800ms,opacity 500ms;;
-            // transition: 2s;
-            opacity: 0;
-            pointer-events: none;
+			padding-top: 80px;
+			transition: padding 800ms, opacity 500ms;
+			opacity: 0;
+			pointer-events: none;
 		}
 		&-item {
 			text-align: center;

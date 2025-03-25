@@ -8,15 +8,12 @@
 	background-color: var(--color-btn-navy);
 	border-radius: 100px;
 	margin-top: 3rem;
-	// font-family: fantasy;
 	font-family: "Oswald", "微軟正黑體", sans-serif;
 	font-weight: lighter;
 	font-size: 1.1rem;
 	text-transform: uppercase;
 	transition: background-color 300ms;
-
 	transform: translateY(15%);
-	// opacity: 0;
 	&:hover {
 		background-color: var(--color-btn-green);
 	}
@@ -57,22 +54,3 @@
 		animation: rotate_video_btn 1s linear forwards infinite;
 	}
 }
-// .btn_video_container {
-//     position: relative;
-//     width: 100%;
-//     display: flex;
-// 	&::before {
-// 		content: "";
-// 		position: absolute;
-// 	}
-// 	&::before {
-// 		width: 2.25rem;
-// 		height: 2.7rem;
-// 		background: url(../img/icon/icon_play.png) no-repeat;
-// 		top: 50%;
-// 		transform: translateY(-50%);
-// 		z-index: 2;
-// 		pointer-events: none;
-// 		opacity: 0;
-// 	}
-// }

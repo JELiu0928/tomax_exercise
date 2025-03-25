@@ -1,17 +1,12 @@
 footer {
-	// padding: 10rem;
 	padding-block: 10.625rem;
 	margin: auto;
 	counter-reset: footer-counter;
 	background-color: #f6f6f6;
 	position: relative;
-	// z-index: -1;
 	@media (max-width: 1080px) {
 		flex-direction: column;
 		padding-block: 3.75rem;
-	}
-	@media (max-width: 768px) {
-		// background-color: #aaa;
 	}
 	& .fade {
 		transition: 300ms;

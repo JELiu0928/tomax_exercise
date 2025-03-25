@@ -1,16 +1,11 @@
 .brand {
 	&__area {
 		width: 100%;
-		// margin-bottom: 3rem;
 	}
 	&__list {
 		display: flex;
-
-		@media (max-width: 1180px) {
-		}
 		@media (max-width: 768px) {
-			// flex-direction: column;
-            display: block;
+			display: block;
 		}
 	}
 	&__item {
@@ -40,9 +35,9 @@
 				}
 			}
 		}
-        @media (max-width: 768px) {
+		@media (max-width: 768px) {
 			position: relative;
-            height: 25.5rem;
+			height: 25.5rem;
 		}
 		&:first-of-type {
 			background: url(../img/banner/bg01.jpg) no-repeat;
@@ -82,7 +77,6 @@
 		position: absolute;
 		top: 25%;
 		left: 16%;
-		// transform: translate(-50%,-50%);
 		font-size: 40px;
 		z-index: 22;
 		@media (max-width: 1230px) {
@@ -90,20 +84,15 @@
 		}
 		@media (max-width: 960px) {
 			text-align: center;
-            width: 100%;
+			width: 100%;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
-		}
-		@media (max-width: 768px) {
-			// position: relative;
-            // top: 0;
 		}
 
 		& > button {
 			margin-top: 2.5rem;
 			font-size: 20px;
-			// @include brandButton;
 			outline: none;
 			border: none;
 			background-color: #fff;

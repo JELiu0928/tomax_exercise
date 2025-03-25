@@ -3,6 +3,7 @@
 @use 'base/index';
 
 @use 'abstracts/variables';
-@use 'abstracts/mixins';
+@use 'abstracts/mixins' as *;
 
 @use 'components/home/home';
+

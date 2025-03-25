@@ -17,23 +17,12 @@ const observer = new IntersectionObserver(
 	},
 	{
 		threshold: 0.2,
-		// rootMargin: '500px 500px 500px 500px',
 	}
 );
 
-// window.addEventListener('DOMContentLoaded',function(){
 
-document.querySelectorAll(".text_circle, .newsletter__wrap, .quality_img,.quality__swiper .swiper-slide,.recommend .swiper-slide,.recommend__grid,.recommend__recipe-area , footer .fade ,.about,.about .about__video,.about .fade ").forEach((elem) => observer.observe(elem));
-// })
-// document.querySelector(".newsletter__wrap").forEach((elem) => observer.observe(elem));
-// if (entry.target.classList.contains("text_circle")) {
-// 	console.log("fade");
-// 	entry.target.classList.add("fade_up");
-// }
-// if (entry.target.classList.contains("newsletter__wrap")) {
-//     console.log('newsletter__wrap',entry.target)
-// 	entry.target.classList.add("fade_in");
-// }
+document.querySelectorAll(".nav-logo,.nav-menu,.banner .swiper-wrapper,.text_circle, .newsletter__wrap, .quality_img,.quality__swiper .swiper-slide,.recommend .swiper-slide,.recommend__grid,.recommend__recipe-area , footer .fade ,.about,.about .about__video,.about .fade ").forEach((elem) => observer.observe(elem));
+
 
 const maskDesc = document.querySelectorAll(".swiper-slide .mask-desc");
 console.log(maskDesc);

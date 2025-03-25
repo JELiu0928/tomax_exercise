@@ -1,7 +1,7 @@
 const navDropdown = document.querySelectorAll(".nav .nav-dropdown");
 const navItems = document.querySelectorAll(".nav .nav-item");
 const header = document.querySelector("header");
-const nav = header.querySelectorAll(".nav-dropdown > a");
+const nav = header.querySelectorAll(".nav .nav-dropdown > a");
 const menuToggleBtn = document.querySelector(".menu_toggle_btn");
 menuToggleBtn.addEventListener("change", function () {
 	document.body.style.overflow = this.checked ? "hidden" : "";
@@ -9,6 +9,8 @@ menuToggleBtn.addEventListener("change", function () {
 window.addEventListener("resize", () => {
 	if (window.innerWidth <= 1180) {
 		header.style.height = "60px";
+	} else {
+		document.body.style.overflow = "";
 	}
 	updateHeader();
 });
@@ -29,7 +31,6 @@ function updateHeader() {
 window.addEventListener("scroll", updateHeader);
 navItems.forEach((item) => {
 	item.addEventListener("mouseenter", () => {
-		// console.log( e.target )
 		const dropdownItem = item.querySelector(".nav-dropdown-item");
 		if (dropdownItem) {
 			dropdownItem.style.pointerEvents = "auto";
@@ -47,7 +48,7 @@ navItems.forEach((item) => {
 	});
 });
 
-const showBtn = document.querySelectorAll(".nav-hamburger .fa-angle-down");
+const showBtn = document.querySelectorAll(".nav-hamburger .nav-dropdown");
 showBtn.forEach((item) => {
 	item.addEventListener("click", function () {
 		const navDropdownItem = this.closest(".nav-dropdown");
