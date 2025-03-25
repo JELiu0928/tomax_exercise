@@ -9,7 +9,7 @@ module.exports = {
 		filename: "bundle.js",
 		path: path.resolve(__dirname, "dist"),
 		clean: true,
-        publicPath: "./",  // 這行很重要！確保相對路徑能在 GitHub Pages 正常運行
+        publicPath: "/tomax_exercise/"
 	},
 	module: {
 		rules: [

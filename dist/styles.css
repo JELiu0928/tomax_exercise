@@ -721,7 +721,7 @@ footer .fade {
   }
 }
 .brand__item:first-of-type {
-  background: url(./assets/images/bg01.0c106f4cae42ca667d89.jpg) no-repeat;
+  background: url(/tomax_exercise/assets/images/bg01.0c106f4cae42ca667d89.jpg) no-repeat;
   background-position: left;
   background-size: cover;
 }
@@ -740,7 +740,7 @@ footer .fade {
   background-color: #004505;
 }
 .brand__item:last-child {
-  background: url(./assets/images/bg02.a54d6b452c51a9857e98.jpg) no-repeat;
+  background: url(/tomax_exercise/assets/images/bg02.a54d6b452c51a9857e98.jpg) no-repeat;
   background-position: right;
   background-size: cover;
 }
@@ -815,7 +815,7 @@ footer .fade {
   position: absolute;
   width: 2.25rem;
   height: 2.7rem;
-  background: url(./assets/images/icon_play.10ab4bfd78d2ee4c7aee.png) no-repeat;
+  background: url(/tomax_exercise/assets/images/icon_play.10ab4bfd78d2ee4c7aee.png) no-repeat;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -882,7 +882,7 @@ footer .fade {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(./assets/images/%E5%A3%BD%E5%96%9C%E7%87%92.54e97eed506c578daa8e.jpg) no-repeat center;
+  background: url(/tomax_exercise/assets/images/%E5%A3%BD%E5%96%9C%E7%87%92.54e97eed506c578daa8e.jpg) no-repeat center;
   background-size: contain;
   position: relative;
   z-index: 1;
@@ -930,7 +930,7 @@ footer .fade {
 }
 .recommend__recipe-area::before {
   content: "";
-  background: url(./assets/images/circleBg02.0da2cf0c8c9da64a16b7.png);
+  background: url(/tomax_exercise/assets/images/circleBg02.0da2cf0c8c9da64a16b7.png);
   width: 160px;
   height: 160px;
   background-size: cover;
@@ -951,7 +951,7 @@ footer .fade {
 .recommend__recipe-area > .recipe_circle {
   width: 180px;
   height: 180px;
-  background: url(./assets/images/circleBg02.0da2cf0c8c9da64a16b7.png) no-repeat;
+  background: url(/tomax_exercise/assets/images/circleBg02.0da2cf0c8c9da64a16b7.png) no-repeat;
   background-size: contain;
   position: absolute;
   left: -0.1rem;
@@ -1373,7 +1373,7 @@ footer .fade {
   border-width: 0rem;
 }
 .about__bg {
-  background: url(./assets/images/bg03.90987aca3bf2fbb6939f.jpg);
+  background: url(/tomax_exercise/assets/images/bg03.90987aca3bf2fbb6939f.jpg);
   background-position: center;
   width: 100%;
   height: 100%;
@@ -1445,7 +1445,7 @@ footer .fade {
   font-size: 25px;
   font-family: "Oleo Script", "微軟正黑體", cursive;
   white-space: nowrap;
-  background: url(./assets/images/circleBg.53e22590d3f0e3ae9865.png) no-repeat;
+  background: url(/tomax_exercise/assets/images/circleBg.53e22590d3f0e3ae9865.png) no-repeat;
   background-size: contain;
   transform: translateY(20%);
   opacity: 0;
@@ -1483,7 +1483,7 @@ footer .fade {
   opacity: 1;
 }
 .about__bg .about__video::after {
-  background: url(./assets/images/watchVideo.0546439fa51640cc0632.png);
+  background: url(/tomax_exercise/assets/images/watchVideo.0546439fa51640cc0632.png);
   top: 3.5rem;
   left: 50%;
   transform: translateX(-50%);
@@ -1528,7 +1528,7 @@ footer .fade {
   position: relative;
 }
 .newsletter__wrap::before {
-  background: url(./assets/images/emailAreaLeft.b79b04f5402f3ca63fe3.png) no-repeat center;
+  background: url(/tomax_exercise/assets/images/emailAreaLeft.b79b04f5402f3ca63fe3.png) no-repeat center;
   left: 0;
   transform: translateX(-15%);
 }
@@ -1537,7 +1537,7 @@ footer .fade {
   transform: translateX(0);
 }
 .newsletter__wrap::after {
-  background: url(./assets/images/emailAreaRight.602e109d8a228a67303e.png) no-repeat center;
+  background: url(/tomax_exercise/assets/images/emailAreaRight.602e109d8a228a67303e.png) no-repeat center;
   right: 0;
   transform: translateX(15%);
 }
@@ -1581,7 +1581,7 @@ footer .fade {
   display: block;
   width: 100%;
   height: 100%;
-  background: url(./assets/images/circleBg.53e22590d3f0e3ae9865.png) no-repeat center;
+  background: url(/tomax_exercise/assets/images/circleBg.53e22590d3f0e3ae9865.png) no-repeat center;
   background-size: 76%;
   position: absolute;
   top: 0;
@@ -1645,7 +1645,7 @@ footer .fade {
   margin-top: 0.7rem;
 }
 .green_circle::before {
-  background: url(./assets/images/circleBg02.0da2cf0c8c9da64a16b7.png) no-repeat center;
+  background: url(/tomax_exercise/assets/images/circleBg02.0da2cf0c8c9da64a16b7.png) no-repeat center;
   background-size: 65%;
 }
 /*!**********************************************************************************!*\
