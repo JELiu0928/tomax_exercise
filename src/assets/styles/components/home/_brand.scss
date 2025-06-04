@@ -19,8 +19,7 @@
 				opacity: 0;
 			}
 			.brand__text > button {
-				cursor: pointer;
-				color: #000;
+				color: var(--color-btn-navy);
 			}
 		}
 		@media (max-width: 1230px) {
@@ -29,9 +28,6 @@
 				flex: 1 1;
 				&::after {
 					opacity: 0.8;
-				}
-				.brand__text > button {
-					color: var(--color-primary);
 				}
 			}
 		}
@@ -96,9 +92,12 @@
 			outline: none;
 			border: none;
 			background-color: #fff;
-			color: var(--color-primary);
+			color: var(--color-btn-green);
 			padding: 1rem 3.5rem;
 			border-radius: 2rem;
+			font-weight: 300;
+			cursor: pointer;
+            transition: .5s;
 		}
 	}
 }

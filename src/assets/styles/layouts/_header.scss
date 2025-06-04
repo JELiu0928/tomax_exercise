@@ -186,6 +186,7 @@ header {
 				border-radius: 50%;
 				color: #fff;
 				margin-block: 1.875rem;
+                flex-shrink: 0;
 			}
 			& .fa-location-dot {
 				font-size: 20px;

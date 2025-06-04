@@ -22,6 +22,7 @@
 			position: absolute;
 			right: 1rem;
 			background-color: transparent;
+            cursor: pointer;
 		}
 	}
 	&__tag {
@@ -31,6 +32,7 @@
 		& > li {
 			padding: 0.4rem 0.8rem;
 			border-radius: 1.6rem;
+            transition: background .5s;
 			background-color: var(--color-btn-green);
 			color: #fff;
 			cursor: pointer;

@@ -2,6 +2,7 @@ import "./banner.js";
 import "./recommend.js";
 import "./quantity.js";
 import "./header.js";
+import "./footer.js";
 const observer = new IntersectionObserver(
 	(entries) => {
 		entries.forEach((entry) => {
@@ -25,10 +26,9 @@ document.querySelectorAll(".nav-logo,.nav-menu,.banner .swiper-wrapper,.text_cir
 
 
 const maskDesc = document.querySelectorAll(".swiper-slide .mask-desc");
-console.log(maskDesc);
 
 maskDesc.forEach(function(item){
-    console.log(item.textContent)
+    // console.log(item.textContent)
    item.textContent = `${item.textContent.slice(0,38)}...`
    
 })

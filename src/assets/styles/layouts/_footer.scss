@@ -28,6 +28,10 @@ footer {
 			flex-direction: column;
 			align-items: center;
 		}
+		@media (max-width: 768px) {
+			// justify-items: center;
+			align-items: flex-start;
+		}
 	}
 	&__logo {
 		display: grid;
@@ -39,6 +43,10 @@ footer {
 		@media (max-width: 1080px) {
 			justify-items: center;
 		}
+		@media (max-width: 768px) {
+			justify-items: flex-start;
+		}
+
 		& > :first-child {
 			// padding-block: 1rem;
 			padding-bottom: 1rem;
@@ -96,13 +104,30 @@ footer {
 				position: relative;
 				flex: 1;
 				@media (max-width: 768px) {
+					display: grid;
+					grid-template-rows: min-content 0fr;
+					transition: grid-template-rows 500ms;
+                    cursor: pointer;
+					& > ul {
+						overflow: hidden;
+						transition: transform 1s, margin 0.5s;
+					}
+					&.show {
+						grid-template-rows: min-content 1fr;
+						ul {
+							margin-top: 1.5rem;
+						}
+					}
 					&::after {
 						content: "+";
 						position: absolute;
 						right: 1rem;
-
 						top: 0;
 						font-size: 1.5rem;
+						transition: 0.5s;
+					}
+					&.show::after {
+						rotate: 45deg;
 					}
 				}
 
@@ -112,14 +137,8 @@ footer {
 					font-size: 0.94rem;
 					color: #626262;
 					letter-spacing: 0.075em;
-					// width: 100%;
 					&:hover {
 						color: var(--color-btn-green);
-					}
-				}
-				@media (max-width: 768px) {
-					& > ul {
-						display: none;
 					}
 				}
 			}
@@ -143,15 +162,21 @@ footer {
 			display: flex;
 			gap: 2rem;
 			opacity: 0.5;
-            @media (max-width: 768px) {
-                margin-left: 0;
-                margin-bottom: 1.25rem;
+            & img{
+                opacity: .5;
+                transition: opacity .3s;
+                &:hover{
+                    opacity: 1;
+                }
             }
-            &.fade {
-                // transition: 300ms;
-                transform: translateY(20%);
-                opacity: 0;
-            }
+			@media (max-width: 768px) {
+				margin-left: 0;
+				margin-bottom: 1.25rem;
+			}
+			&.fade {
+				transform: translateY(20%);
+				opacity: 0;
+			}
 		}
 	}
 }
