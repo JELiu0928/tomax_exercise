@@ -438,6 +438,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _uti
 
 /***/ }),
 
+/***/ "./src/assets/js/footer.js":
+/*!*********************************!*\
+  !*** ./src/assets/js/footer.js ***!
+  \*********************************/
+/***/ (() => {
+
+eval("const navItems = document.querySelectorAll(\".footer__nav-wrap .nav_item\");\r\n\r\nnavItems.forEach((item)=>{\r\n    item.addEventListener(\"click\", function () {\r\n        console.log(this)\r\n\t\tthis.classList.toggle(\"show\");\r\n\t});\r\n})\r\n\n\n//# sourceURL=webpack://tomax_exercise/./src/assets/js/footer.js?");
+
+/***/ }),
+
 /***/ "./src/assets/js/header.js":
 /*!*********************************!*\
   !*** ./src/assets/js/header.js ***!
@@ -455,7 +465,7 @@ eval("const navDropdown = document.querySelectorAll(\".nav .nav-dropdown\");\r\n
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _banner_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./banner.js */ \"./src/assets/js/banner.js\");\n/* harmony import */ var _recommend_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./recommend.js */ \"./src/assets/js/recommend.js\");\n/* harmony import */ var _quantity_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./quantity.js */ \"./src/assets/js/quantity.js\");\n/* harmony import */ var _header_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./header.js */ \"./src/assets/js/header.js\");\n/* harmony import */ var _header_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_header_js__WEBPACK_IMPORTED_MODULE_3__);\n\r\n\r\n\r\n\r\nconst observer = new IntersectionObserver(\r\n\t(entries) => {\r\n\t\tentries.forEach((entry) => {\r\n\t\t\tif (entry.isIntersecting) {\r\n\t\t\t\tif (entry.target.classList.contains(\"swiper-slide\") || entry.target.classList.contains(\"fade\")) {\r\n\t\t\t\t\t// console.log(\"fade\");\r\n\t\t\t\t\tentry.target.classList.add(\"fade_up\");\r\n\t\t\t\t} else {\r\n\t\t\t\t\tentry.target.classList.add(\"fade_in\");\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t});\r\n\t},\r\n\t{\r\n\t\tthreshold: 0.2,\r\n\t}\r\n);\r\n\r\n\r\ndocument.querySelectorAll(\".nav-logo,.nav-menu,.banner .swiper-wrapper,.text_circle, .newsletter__wrap, .quality_img,.quality__swiper .swiper-slide,.recommend .swiper-slide,.recommend__grid,.recommend__recipe-area , footer .fade ,.about,.about .about__video,.about .fade \").forEach((elem) => observer.observe(elem));\r\n\r\n\r\nconst maskDesc = document.querySelectorAll(\".swiper-slide .mask-desc\");\r\nconsole.log(maskDesc);\r\n\r\nmaskDesc.forEach(function(item){\r\n    console.log(item.textContent)\r\n   item.textContent = `${item.textContent.slice(0,38)}...`\r\n   \r\n})\n\n//# sourceURL=webpack://tomax_exercise/./src/assets/js/home.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _banner_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./banner.js */ \"./src/assets/js/banner.js\");\n/* harmony import */ var _recommend_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./recommend.js */ \"./src/assets/js/recommend.js\");\n/* harmony import */ var _quantity_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./quantity.js */ \"./src/assets/js/quantity.js\");\n/* harmony import */ var _header_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./header.js */ \"./src/assets/js/header.js\");\n/* harmony import */ var _header_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_header_js__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _footer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./footer.js */ \"./src/assets/js/footer.js\");\n/* harmony import */ var _footer_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_footer_js__WEBPACK_IMPORTED_MODULE_4__);\n\r\n\r\n\r\n\r\n\r\nconst observer = new IntersectionObserver(\r\n\t(entries) => {\r\n\t\tentries.forEach((entry) => {\r\n\t\t\tif (entry.isIntersecting) {\r\n\t\t\t\tif (entry.target.classList.contains(\"swiper-slide\") || entry.target.classList.contains(\"fade\")) {\r\n\t\t\t\t\t// console.log(\"fade\");\r\n\t\t\t\t\tentry.target.classList.add(\"fade_up\");\r\n\t\t\t\t} else {\r\n\t\t\t\t\tentry.target.classList.add(\"fade_in\");\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t});\r\n\t},\r\n\t{\r\n\t\tthreshold: 0.2,\r\n\t}\r\n);\r\n\r\n\r\ndocument.querySelectorAll(\".nav-logo,.nav-menu,.banner .swiper-wrapper,.text_circle, .newsletter__wrap, .quality_img,.quality__swiper .swiper-slide,.recommend .swiper-slide,.recommend__grid,.recommend__recipe-area , footer .fade ,.about,.about .about__video,.about .fade \").forEach((elem) => observer.observe(elem));\r\n\r\n\r\nconst maskDesc = document.querySelectorAll(\".swiper-slide .mask-desc\");\r\n\r\nmaskDesc.forEach(function(item){\r\n    // console.log(item.textContent)\r\n   item.textContent = `${item.textContent.slice(0,38)}...`\r\n   \r\n})\n\n//# sourceURL=webpack://tomax_exercise/./src/assets/js/home.js?");
 
 /***/ }),
 

@@ -283,6 +283,7 @@ header .menu_btn {
     border-radius: 50%;
     color: #fff;
     margin-block: 1.875rem;
+    flex-shrink: 0;
   }
   .nav-hamburger .fa-location-dot {
     font-size: 20px;
@@ -386,6 +387,11 @@ footer .fade {
     align-items: center;
   }
 }
+@media (max-width: 768px) {
+  .footer__container {
+    align-items: flex-start;
+  }
+}
 .footer__logo {
   display: grid;
   grid-template-columns: repeat(2, 2fr);
@@ -396,6 +402,11 @@ footer .fade {
 @media (max-width: 1080px) {
   .footer__logo {
     justify-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .footer__logo {
+    justify-items: flex-start;
   }
 }
 .footer__logo > :first-child {
@@ -460,12 +471,32 @@ footer .fade {
   flex: 1;
 }
 @media (max-width: 768px) {
+  .footer__nav-wrap > .nav_item {
+    display: grid;
+    grid-template-rows: min-content 0fr;
+    transition: grid-template-rows 500ms;
+    cursor: pointer;
+  }
+  .footer__nav-wrap > .nav_item > ul {
+    overflow: hidden;
+    transition: transform 1s, margin 0.5s;
+  }
+  .footer__nav-wrap > .nav_item.show {
+    grid-template-rows: min-content 1fr;
+  }
+  .footer__nav-wrap > .nav_item.show ul {
+    margin-top: 1.5rem;
+  }
   .footer__nav-wrap > .nav_item::after {
     content: "+";
     position: absolute;
     right: 1rem;
     top: 0;
     font-size: 1.5rem;
+    transition: 0.5s;
+  }
+  .footer__nav-wrap > .nav_item.show::after {
+    rotate: 45deg;
   }
 }
 .footer__nav-wrap > .nav_item > ul > li > a {
@@ -477,11 +508,6 @@ footer .fade {
 }
 .footer__nav-wrap > .nav_item > ul > li > a:hover {
   color: var(--color-btn-green);
-}
-@media (max-width: 768px) {
-  .footer__nav-wrap > .nav_item > ul {
-    display: none;
-  }
 }
 .footer__bottom {
   display: flex;
@@ -504,6 +530,13 @@ footer .fade {
   display: flex;
   gap: 2rem;
   opacity: 0.5;
+}
+.footer__bottom > .social img {
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+.footer__bottom > .social img:hover {
+  opacity: 1;
 }
 @media (max-width: 768px) {
   .footer__bottom > .social {
@@ -656,6 +689,7 @@ footer .fade {
   position: absolute;
   right: 1rem;
   background-color: transparent;
+  cursor: pointer;
 }
 .search__tag {
   display: flex;
@@ -665,6 +699,7 @@ footer .fade {
 .search__tag > li {
   padding: 0.4rem 0.8rem;
   border-radius: 1.6rem;
+  transition: background 0.5s;
   background-color: var(--color-btn-green);
   color: #fff;
   cursor: pointer;
@@ -697,8 +732,7 @@ footer .fade {
   opacity: 0;
 }
 .brand__item:hover .brand__text > button {
-  cursor: pointer;
-  color: #000;
+  color: var(--color-btn-navy);
 }
 @media (max-width: 1230px) {
   .brand__item {
@@ -709,9 +743,6 @@ footer .fade {
   }
   .brand__item:hover::after {
     opacity: 0.8;
-  }
-  .brand__item:hover .brand__text > button {
-    color: var(--color-primary);
   }
 }
 @media (max-width: 768px) {
@@ -780,9 +811,12 @@ footer .fade {
   outline: none;
   border: none;
   background-color: #fff;
-  color: var(--color-primary);
+  color: var(--color-btn-green);
   padding: 1rem 3.5rem;
   border-radius: 2rem;
+  font-weight: 300;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 .btn__capsule {
@@ -918,6 +952,7 @@ footer .fade {
   font-size: 15px;
   color: #626262;
   letter-spacing: 0.05em;
+  font-weight: 300;
 }
 .recommend__recipe-area > article > a:has(h4) {
   color: #263149;
@@ -1140,12 +1175,18 @@ footer .fade {
   position: relative;
   z-index: 1;
 }
+@media (max-width: 640px) {
+  .quality__bg {
+    padding-top: 3.125rem;
+  }
+}
 .quality__text {
   text-align: center;
   margin-top: 3.5rem;
   margin-bottom: 3.5rem;
   position: relative;
   z-index: 1;
+  font-weight: 300;
 }
 .quality__text :first-of-type {
   font-size: 1.5625rem;
@@ -1287,6 +1328,11 @@ footer .fade {
     top: 9.5rem;
   }
 }
+@media (max-width: 640px) {
+  .quality .img_left img {
+    display: none;
+  }
+}
 .quality .img_right.fade_in {
   transform: translate(0px, 0px);
 }
@@ -1330,6 +1376,11 @@ footer .fade {
     width: 18.75rem;
   }
 }
+@media (max-width: 640px) {
+  .quality .img_right img {
+    display: none;
+  }
+}
 .quality .img_bottom {
   bottom: -10rem;
   left: 50%;
@@ -1358,7 +1409,6 @@ footer .fade {
 .about__wrap {
   margin: auto;
   position: relative;
-  z-index: 5;
   height: 100%;
   width: min(87rem, 100%);
 }
@@ -1385,8 +1435,7 @@ footer .fade {
 }
 @media (max-width: 1230px) {
   .about__bg {
-    width: 100%;
-    padding-inline: 4%;
+    padding: 10rem 4%;
   }
 }
 .about__bg article {
@@ -1412,6 +1461,7 @@ footer .fade {
   .about__bg article {
     width: 100%;
     text-align: center;
+    padding: 5rem 2.5rem;
   }
 }
 .about__bg article > h2 {
@@ -1423,16 +1473,27 @@ footer .fade {
   letter-spacing: 0.075em;
   transform: translateY(20%);
   opacity: 0;
+  position: relative;
+  z-index: 1;
 }
 .about__bg article > h2 > span {
   font-size: 2.9rem;
   font-weight: bold;
+}
+@media (max-width: 760px) {
+  .about__bg article > h2 {
+    margin-bottom: 30px;
+  }
+  .about__bg article > h2 > span {
+    font-size: 2.5rem;
+  }
 }
 .about__bg article > p {
   letter-spacing: 0.05em;
   line-height: 1.8;
   transform: translateY(20%);
   opacity: 0;
+  font-weight: 300;
 }
 .about__bg article .about__circle {
   position: absolute;
@@ -1447,6 +1508,7 @@ footer .fade {
   white-space: nowrap;
   background: url(/tomax_exercise/assets/images/circleBg.53e22590d3f0e3ae9865.png) no-repeat;
   background-size: contain;
+  z-index: 0;
   transform: translateY(20%);
   opacity: 0;
 }
@@ -1502,6 +1564,8 @@ footer .fade {
   gap: 1rem;
   transform: translateY(20%);
   opacity: 0;
+  position: relative;
+  z-index: 99;
 }
 .about__btn .video_btn {
   display: none;
